@@ -5,5 +5,4 @@
 666666
 777777
 999999
-HEAD
 merge aaaaaaa
