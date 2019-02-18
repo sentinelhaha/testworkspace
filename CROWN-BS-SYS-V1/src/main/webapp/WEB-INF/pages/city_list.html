@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>珍岛集团</title>
+	<meta name="keywords" content="珍岛集团">
+	<meta name="description" content="珍岛集团">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="shortcut icon" href="../images/favicon.ico">
+	
+	<!-- include main css -->
+	<link rel="stylesheet" type="text/css" href="../css/slick.css"/>	
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/jquery.mmenu.all.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+	<link href="../font-awesome-4.5.0/css/font-awesome.min.css" rel='stylesheet' type='text/css' media="all" />
+	<link rel="stylesheet" type="text/css" href="../css/animate.css"/>
+	<!-- <link rel="import" href="share.html" id="share1"></link> -->
+	<!--[if lt IE 9]>
+    <script src="http://apps.bdimg.com/libs/html5shiv/r29/html5.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<style type="text/css">
+	
+	 #pagination{
+	
+	position:absolute;
+/* 	float:right; */
+	width:900px;
+	height:auto;
+	} 
+	
+	
+	</style>
+	
+	<style>
+/* #pages1{
+	 width: 90%;
+	 left:5%;
+  text-align: center;
+  margin: auto;
+  padding-top: 20px;
+  padding-left:25%;
+}
+#pages1>li ,#pages1{
+ 
+float:left;
+list-style:none;
+text-decoration: none;
+
+}
+#pages1 a:hover{
+	text-decoration: none;
+} */
+
+</style>
+</head>
+<body>
+	
+<div>
+	<!--header-->
+	<header class="header_zi">
+	   <div class="container">
+		   <div class="logo">
+	   	   		<a href="doIndexUI.do"><img src="../images/logo.png" alt="" /></a>
+		   </div>
+		   <a href="#mmenu" class="phone-nav"><i class="fa fa-list"></i></a>
+		  <div class="logo_right">
+		  	 <nav class="nav">
+		   		<ul>    
+		   			<li><a class="load_index active">首页</a></li>
+		   			<li><a class="load_city">城市</a>
+		   				<ul>
+		   					<li><a href="court_travel.html">热门城市</a></li>  
+		   					<li><a href="court_travel.html">最新推荐</a></li>
+		   					<li><a href="court_travel.html">文化名城</a></li>
+		   				</ul>
+		   			</li>
+		   			<li><a class="load_spot">景点</a>
+		   				<ul>
+		   					<li><a href="court_travel.html">热门景点</a></li>  
+		   					<li><a href="court_travel.html">最新推荐</a></li>
+		   					<li><a href="court_travel.html">特色景点</a></li>
+		   				</ul>
+		   			</li>
+		   			<li><a class="load_travel">游记</a>
+		   				<ul>
+		   					<li><a href="court_travel.html">最新游记</a></li>  
+		   					<li><a href="court_travel.html">热门游记</a></li>
+		   					<li><a href="court_travel.html">创意游记</a></li>
+		   				</ul>
+		   			</li>
+		   			<li><a class="load_user">个人</a>
+		   				<ul>
+		   					<li><a href="court_travel.html">个人信息</a></li>  
+		   					<li><a href="court_travel.html">私人游记</a></li>
+		   					
+		   				</ul>
+		   			</li>
+		   			
+		   		</ul>
+		  	 </nav>
+		  	 <div class="search">
+		  	 	<!-- <span class="sea_x">
+		  	 		<input type="" name="" id="" placeholder="请输入关键词">
+		  	 		<i class="fa fa-search"></i>		  	
+		  	 	</span> -->
+		  	 	<span class="y_z">
+		  	 		<a href="#" class="zh active login">登录</a><a href="#" class="en logout">注销</a>
+		  	 		
+		  	 	</span>
+		  	 <!-- 	<span class="y_z">
+		  	 		<input type="button" value="登录" id="login">
+		  	 	</span>
+		  	 	<span class="y_z">
+		  	 		<input type="button" value="注销" id="logout">
+		  	 	</span> -->
+		  	 	
+		  	 </div>
+		  </div>
+	   	
+	   </div>
+	</header>
+			
+	<!--banner  start-->
+	<section class="banner_zi">
+	    <div><img src="../images/banner_yuan.png" alt=""></div>	   
+	</section>
+	<!--banner end-->
+	<div class="head_bar">
+		<span>位置：</span><a class="load_index1">首页 </a> > <span class="active">城市</span>
+	</div>
+		<div class="travel_con">
+			<div class="top_qie">
+				<a href="">茶艺中心</a>
+				<a href="" class="active">万竹林海</a>
+				<a href="" >创意中心</a>
+				<a href="">花草园艺</a> 
+			</div>
+			<div class="tra_ul">
+				<div class="top_a">
+					<a href="" class="active">产品分类一</a>
+					<a href="">产品分类二</a>
+					<a href="">产品分类三</a>
+					<a href="">产品分类四</a>
+					<a href="">产品分类五</a>
+				</div>
+				<ul class="clearfix" id="cityObject"> 
+					<!-- <li class="wow bounceIn cityObject" style="border:none"></li>
+					<li class="wow bounceIn cityObject" style="border:none"></li>
+					<li class="wow bounceIn cityObject" style="border:none"></li>
+					<li class="wow bounceIn cityObject" style="border:none"></li>
+					<li class="wow bounceIn cityObject" style="border:none"></li>
+					<li class="wow bounceIn cityObject" style="border:none"></li>
+					<li class="wow bounceIn cityObject" style="border:none"></li>
+					<li class="wow bounceIn cityObject" style="border:none"></li>
+					<li class="wow bounceIn cityObject" style="border:none"></li>
+					<li class="wow bounceIn cityObject" style="border:none"></li>
+					<li class="wow bounceIn cityObject" style="border:none"></li>
+					<li class="wow bounceIn cityObject" style="border:none"></li> -->
+				</ul>
+				<div class="page" id="pageId">
+						<!-- <a href=""><i class="ye fa fa-backward"></i></a>
+						<a href=""><i class="ye fa fa-caret-left"></i></a>
+						<a href="" class="active">1</a>
+						<a href="" class="">2</a>
+						<a href="" class="">3</a>
+						<span href="" class="">…</span> 
+						<a href=""><i class="ye fa fa-caret-right"></i></a>
+						<a href=""><i class="ye fa fa-forward"></i></a> -->
+				</div>
+			</div>
+		</div>
+		
+	
+	
+	
+ 
+    <!--footer  start-->
+       <footer class="footer">
+       <div class="footer_con">
+       		<div class="con">
+       			<div class="nei">
+       				<div class="">
+       					<ul class="di_nav clearfix">
+			   			<li><a class="load_index">首页</a></li>
+			   			<li><a class="load_city">城市</a></li>
+			   			<li><a class="load_spot">景点</a></li>
+			   			<li><a class="load_travel">游记</a></li>
+			   			</ul>
+	       				
+       				</div>
+       				<div class="clear"></div>
+       				<div class="lian">
+       					电话：<a href="tel:021-31265245">021-31265245</a><br />
+						邮箱：<a href="mailto:Eason.wang@71360.com">Eason.wang@71360.com</a><br />
+						手机：<a href="tel:189 1610 1908">189 1610 1908</a><br />
+						地址：上海市虹口区水电路682号 天虹商务大厦6F、7F、11F<br />
+						<a href="map.html">网站地图</a><br />
+						<span> 
+							<a href="http://www.71360.com/" target="_blank">
+								<img src="../images/yu.png" alt="" />
+							</a>
+							
+							<span class="er_a">
+								<img src="../images/er.png" alt="" class="one_img"/> 
+								珍岛公众号
+								<img src="../images/erwei.png" alt="" class="er_img"/>
+							</span>
+							
+						</span> 	
+       				</div>
+       				
+       			</div>
+       		</div>
+       		
+       </div>
+       <div class="copy">Copyright© 2016  版权所有：上海珍岛茶业有限公司</div>
+	</footer>
+    <!--footer  end-->
+
+	<!--移动端  Mmenu-->
+	<nav id="mmenu">
+		<ul>
+			
+			<li>
+				<a class="load_index active">首页</a>
+			</li>
+   			<li>
+   				<a class="load_city">城市</a>
+   				<ul>
+   					<li>
+   						<a href="court_travel.html">热门城市</a>
+   					</li>  
+   					<li>
+   						<a href="court_travel.html">最新推荐</a>
+   					</li>
+   					<li>
+   						<a href="court_travel.html">文化名城</a>
+   					</li>
+   				</ul>
+		   	</li>
+   			<li><a class="load_spot">景点</a>
+   				<ul>
+   					<li>
+   						<a href="court_travel.html">热门景点</a>
+   					</li>  
+   					<li>
+   						<a href="court_travel.html">最新推荐</a>
+   					</li>
+   					<li>
+   						<a href="court_travel.html">特色景点</a>
+   					</li>
+   				</ul>
+   			</li>
+   			<li><a class="load_travel">游记</a>
+   				<ul>
+   					<li>
+   						<a href="court_travel.html">最新游记</a>
+   					</li>  
+   					<li>
+   						<a href="court_travel.html">热门游记</a>
+   					</li>
+   					<li>
+   						<a href="court_travel.html">创意游记</a>
+   					</li>
+   				</ul>
+   			</li>
+   			<li><a class="load_user">个人</a>
+   				<ul>
+   					<li>
+   						<a href="court_travel.html">个人信息</a>
+   					</li>  
+   					<li>
+   						<a href="court_travel.html">私人游记</a>
+   					</li>
+   					
+   				</ul>
+   			</li>
+		</ul>
+	</nav>	
+</div>	
+
+<!--Include Js-->
+ <script src="http://apps.bdimg.com/libs/jquery/1.8.3/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!--移动端导航-->
+ <script src="../js/jquery.mmenu.all.min.js" type="text/javascript" charset="utf-8"></script> 
+
+ <script src="../js/public.js" type="text/javascript" charset="utf-8"></script> 
+
+<!--slick-->
+<script src="../js/slick.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/wow.js" type="text/javascript" charset="utf-8"></script> 
+
+<!--placeholder-->
+ <script src="../js/jquery.placeholder.min.js" type="text/javascript" charset="utf-8"></script> 
+<script type="text/javascript">
+	 $(function(){ $('input, textarea').placeholder(); }); 
+	 $(function(){
+		 
+		    $(".load_index").click(function(){
+		 		location.href="../doIndexUI.do";
+		 	})
+		    $(".load_city").click(function(){
+				location.href="doCityUI.do";
+			})
+			$(".load_spot").click(function(){
+				location.href="../spot/doSpotUI.do";
+			})
+			$(".load_travel").click(function(){
+				location.href="../travel/doTravelUI.do";
+			})
+			$(".load_user").click(function(){
+				location.href="../user/doUserUI.do";
+			})
+			
+			$(".login").click(function(){
+				location.href="../doLogin.do";
+			})
+			$(".logout").click(function(){
+				location.href="../doLogin.do";
+			})
+		 
+		 
+		  $("#pageId").load("../doPageUI.do",function(){
+			
+			findTripObjects();//ajax
+			//在此位置实现异步加载的目的是保证两个异步的顺序,里面的后执行
+			});//ajax 去执行doGetObjects()方法的同时执行下面代码
+			//doGetObjects();
+			 
+			
+		});  
+		
+		
+		//点击日志查询按钮时执行此方法
+		function doQueryObjects(){
+			//设置页码值为1
+			$("#pageId").data("pageCurrent",1);
+			//执行查询
+			findTripObjects();
+		}
+		
+		//异步加载服务端数据，并将数据呈现在页面上
+		function findTripObjects(){
+			
+			//1.定义请求的url
+			//debugger
+			var logUrl="http://localhost:8080/CROWN-BS-SYS-V1/city/findPageObjects.do";
+			//2.定义请求的参数
+			//var params="pageCurrent=1";
+			var pageCurrent =$("#pageId").data("pageCurrent");
+			if(!pageCurrent)pageCurrent=1;
+			//！可将变量转换成boolean类型，null、undefined和
+			//空字符串取反都为false，其余都为true。
+			//var params="pageCurrent="+pageCurrent;
+			var params={"pageCurrent":pageCurrent};
+			//点击查询按钮时，获取用户名，基于用户名执行查询操作。
+			 var city_name=$("#location").val(); 
+			//var params="pageCurrent="+pageCurrent+"&username="+username;
+			if(city_name)params.city_name=city_name;
+			//3.发送异步请求
+			$.ajax({//底层封装了XMLHttpRequest
+				url:logUrl,
+				data:params,
+				dataType:"json",
+				success:function(result){
+					console.log(result);
+					doHandleResponseResult(result);
+				}//result为服务器响应的结果 （一般是响应文本，通过XMLHttpRequest创建的对象可以获得）
+			});//ajax()为jquery 中定义异步请求参数
+		}
+		function doHandleResponseResult(result){
+			if(result.state==1){
+			//初始化当前页信息(将日志数据呈现在页面上)
+			doSetTableBodyRows(result.data.records,result.data.pictureUrl);
+			//初始化分页信息(将分页数据呈现在页面上)
+			 doSetPagination(result.data); 
+			}else{
+			  alert(result.message);
+			}
+		}
+		function doSetTableBodyRows(records,pictureUrl){
+			
+			//1.获取tbody对象，并清空
+			var tBody= $("#cityObject");
+			tBody.empty();//清空数据
+			//2.迭代记录，将数据呈现在tbody中
+			//for(var i=0;i<records.length;i++){}
+			for(var i in records){
+				//2.1构建tr对象
+				var li = $("<li></li>")
+				//2.2构建tds对象
+				var lis = doCreateTds(records[i],pictureUrl);
+				//2.3将td追加到tr中
+				li.append(lis);
+				//2.4将tr追加到tbody中
+				tBody.append(li)
+			}
+		}
+		function doCreateTds(row,pictureUrl){
+			
+		 var http_dz ="http://192.168.2.81:8002";
+			
+			var lis ='<a href="city_page/?travelId='+row.id+'">'+
+			'<img style="width:100%" src="'+pictureUrl+'/static/lunbo/'+row.city_img+'" class="vcenter" alt="picture"/>'+
+			'<i></i>'+
+		'</a>'+
+		'<a href="city_page/?travelId='+row.id+'">'+row.city_name+'</a>'
+			
+			return lis; 
+		} 
+		
+/* 		function doSetTableBodyRows(records){
+			//1.获取tbody对象，并清空
+			var tBody= $("#tripObject");
+			tBody.empty();//清空数据
+			//2.迭代记录，将数据呈现在tbody中
+			//for(var i=0;i<records.length;i++){}
+			for(var i in records){
+				//2.1构建tr对象
+				var tr = $("<tr></tr>")
+				//2.2构建tds对象
+				var tds = doCreateTds(records[i]);
+				//2.3将td追加到tr中
+				tr.append(tds);
+				//2.4将tr追加到tbody中
+				tBody.append(tr)
+			}
+		}
+		function doCreateTds(row){
+			var tds =
+				"<td><input type='checkbox' name='cItem' class='cItem' value='"+row.id+"'></td>"+
+				"<td>"+row.username+"</td>"+
+				"<td>"+row.operation+"</td>"+
+				"<td>"+row.method+"</td>"+
+				"<td>"+row.params+"</td>"+
+				"<td>"+row.ip+"</td>"+
+				"<td>"+row.time+"</td>";
+			return tds;
+		}
+		 */
+		
+		
+		
+		/*先写好的一种方式的部分留着*/
+		
+		/*  $.get('http://192.168.2.38:8001/Django/yj_list/',{'sheng_name':'四川','pagination':'1'},function(result){ 
+ 			console.log(result);
+ 			console.log(result.L);
+ 			console.log(result.cs_lunbo);
+ 			console.log(result.http_dz);
+ 			console.log(result.yj_list);
+ 			console.log(result.pagination);
+ 			
+ 			var n = 0;
+			$('.cityObject').each(function(){
+				if(n<12){
+				var img = $(result.yj_list[n]).attr("img");
+				var name= $(result.yj_list[n]).attr("yj_name");
+				$(this).html('<a href="court_travel.html">'+
+	    						'<img style="width:100%" src="'+result.http_dz+'/static/yj_tp/'+img+'" class="vcenter" alt="picture"/>'+
+	    						'<i></i>'+
+	    					'</a>'+
+							'<a href="court_travel.html">'+name+'</a>'
+						);
+				n++;
+					
+				}else{
+					return;
+				}
+			}) 
+			
+			 for(var i = 0;i < result.L.length; i++){
+		            if(i==0){
+		                if(result.L[i]==result.pagination[0]){
+		                    $('#pagination').append('<a href="javascript:;"><span>&nbsp;&nbsp;<b>上一页</b>&nbsp;&nbsp;</span></a>');
+		                }else{
+		                    $('#pagination').append('<a href="/yj_list/?pagination='+result.pagination[2]+'"><span>&nbsp;&nbsp;<b>上一页</b>&nbsp;&nbsp;</span></a>');
+		                };
+
+		            };
+
+		            if(result.L[i]==result.pagination[0]){
+		                $('#pagination').append('<a href="javascript:;"><span style="font-size: 20px;">&nbsp;&nbsp;<b>'+result.L[i]+'</b>&nbsp;&nbsp;</span></a>');
+		            }else{
+		                $('#pagination').append('<a href="/yj_list/?pagination='+result.L[i]+ '"><span>&nbsp;&nbsp;'+result.L[i]+'&nbsp;&nbsp;</span></a>');
+		            };
+
+		            if (i==result.L.length-1){
+		                if (result.L[i]==result.pagination[0]){
+		                    $('#pagination').append('<a href="javascript:;"><span>&nbsp;&nbsp;<b>下一页</b>&nbsp;&nbsp;</span></a>');
+		                }else{
+		                    $('#pagination').append('<a href="/yj_list/?pagination='+result.pagination[1]+'"><span>&nbsp;&nbsp;<b>下一页</b>&nbsp;&nbsp;</span></a>');
+		                };
+		            };
+		        };
+ 			
+ 		},'json');  
+	}) */
+	
+	
+	
+</script>
+
+<!--<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
+
+</body>
+</html>

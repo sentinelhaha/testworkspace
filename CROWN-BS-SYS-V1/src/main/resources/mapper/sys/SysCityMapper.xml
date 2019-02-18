@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bs.sys.dao.SysCityDao">
+	<select id="getCityPicture"
+			resultType="com.bs.sys.vo.QJdImgTable">
+		select c.id,c.city_name,c.sheng_id,c.sheng_name,c.guoji_id,
+		c.guoji_name,c.zhouji_id,c.zhouji_name,c.city_img,c.city_jj,c.jianjie2
+	    from q_city_table c 
+		<include refid="queryWhereId"/>
+		limit 0,12;
+	</select>
+	
+	<select id="getRowCount"
+			resultType="int">
+		select count(*) from q_city_table
+		<include refid="queryWhereId"/>
+	</select>
+	
+	<sql id="queryWhereId">
+  		<where>
+  			<if test="city_name!=null and city_name!=''">
+	  			city_name like concat("%",#{city_name},"%")
+  			</if>
+  		</where>
+  	</sql>	
+	
+	<select id="findPageObjects"
+			resultType="com.bs.sys.entity.SysCity">
+		select c.id,c.city_name,c.sheng_id,c.sheng_name,c.guoji_id,
+		c.guoji_name,c.zhouji_id,c.zhouji_name,c.city_img,c.city_jj,c.jianjie2
+	    from q_city_table c
+		<include refid="queryWhereId"/>
+		limit #{startIndex},#{pageSize}
+	
+	</select>
+
+
+
+
+</mapper>

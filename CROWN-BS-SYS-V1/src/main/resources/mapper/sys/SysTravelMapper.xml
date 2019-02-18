@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bs.sys.dao.SysTravelDao">
+	<select id="findTripObjects"
+			resultType="map">
+		SELECT t.id,t.city_name,t.city_id,t.yj_name,t.yj_zz,i.imgname FROM q_yj_table t LEFT JOIN q_yj_img i ON i.tp_id=t.url LIMIT 0,12
+	
+	</select>
+	
+	<sql id="queryWhereId">
+		<where>
+			<if test="yj_name!=null and yj_name!=''">
+				yj_name like concat("%",#{travelname},"%"})
+			</if>
+		</where>
+	</sql>
+	<select id="getRowCount"
+			resultType="int">
+		SELECT COUNT(*) FROM (SELECT 1,GROUP_CONCAT(j.imgname)
+		FROM q_yj_table q LEFT JOIN q_yj_img j ON q.url=j.tp_id
+		<include refid="queryWhereId"/>
+		GROUP BY yj_name) traveltable;
+	</select>
+	
+	<select id="findPageObjects"
+			resultType="com.bs.sys.entity.SysTravel">
+		select 
+		any_value(j.id) as id,any_value(y.city_name) as city_name,
+		any_value(y.city_id) as city_id,any_value(y.yj_name) as yj_name,
+		any_value(y.yj_zz) as yj_zz,any_value(y.cf_time) as cf_time,
+		any_value(y.cf_time2) as cf_time2,any_value(y.xc_jg) as xc_jg,
+		any_value(y.xc_day) as xc_day,any_value(y.xc_day2) as xc_day2,
+		any_value(y.xc_rs) as xc_rs,any_value(y.xc_tj) as xc_tj,
+		any_value(y.xc_ap) as xc_ap,any_value(y.xc_nr_html) as xc_nr_html,
+		any_value(y.rm) as rm,any_value(y.url) as url,
+		group_concat(j.imgname separator '|') as imgname
+		from q_yj_table y left join 
+		q_yj_img j on y.url=j.tp_id 
+		<include refid="queryWhereId"></include>
+		group by yj_name
+		limit #{startIndex},#{pageSize}
+	</select>
+	
+	<!-- 多表关联去重查询 -->
+	<!-- SELECT q.*,GROUP_CONCAT(j.imgname) AS imgName 
+FROM q_yj_table q LEFT JOIN q_yj_img j ON q.url=j.tp_id
+group by yj_name
+LIMIT 0,12; -->
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
