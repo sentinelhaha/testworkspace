@@ -16,19 +16,52 @@
 	<link rel="stylesheet" type="text/css" href="../css/style.css"/>
 	<link href="../font-awesome-4.5.0/css/font-awesome.min.css" rel='stylesheet' type='text/css' media="all" />
 	<link rel="stylesheet" type="text/css" href="../css/animate.css"/>
-	
+	<!-- <link rel="import" href="share.html" id="share1"></link> -->
 	<!--[if lt IE 9]>
     <script src="http://apps.bdimg.com/libs/html5shiv/r29/html5.min.js"></script>
     <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+	<style type="text/css">
+	
+	 #pagination{
+	
+	position:absolute;
+/* 	float:right; */
+	width:900px;
+	height:auto;
+	} 
+	
+	
+	</style>
+	
+	<style>
+/* #pages1{
+	 width: 90%;
+	 left:5%;
+  text-align: center;
+  margin: auto;
+  padding-top: 20px;
+  padding-left:25%;
+}
+#pages1>li ,#pages1{
+ 
+float:left;
+list-style:none;
+text-decoration: none;
 
+}
+#pages1 a:hover{
+	text-decoration: none;
+} */
+
+</style>
 </head>
 <body>
 	
 <div>
 	<!--header-->
 	<header class="header_zi">
-	     <div class="container">
+	    <div class="container">
 		   <div class="logo">
 	   	   		<a href="doIndexUI.do"><img src="../images/logo.png" alt="" /></a>
 		   </div>
@@ -44,7 +77,7 @@
 		   					<li><a href="">文化名城</a></li>
 		   				</ul>
 		   			</li>
-		   			<li><a class="load_spot active">景点</a>
+		   			<li><a class="load_spot">景点</a>
 		   				<ul>
 		   					<li><a href="">热门景点</a></li>  
 		   					<li><a href="">最新推荐</a></li>
@@ -58,10 +91,10 @@
 		   					<li><a href="">创意游记</a></li>
 		   				</ul>
 		   			</li>
-		   			<li><a class="load_user">个人</a>
+		   			<li><a class="load_user active">私人游记</a>
 		   				<ul>
 		   					<li><a href="">个人信息</a></li>  
-		   					<li><a href="">私人游记</a></li>
+		   					<li><a class="load_mytravel">私人游记</a></li>
 		   					
 		   				</ul>
 		   			</li>
@@ -92,17 +125,17 @@
 			
 	<!--banner  start-->
 	<section class="banner_zi">
-	    <div><img src="../images/banner_spot.png" alt=""></div>	   
+	    <div><img src="../images/banner_travel.png" alt=""></div>	   
 	</section>
 	<!--banner end-->
 	<div class="head_bar">
-		<span>位置：</span><a class="load_index1">首页 </a> > <span class="active">景点</span>
+		<span>位置：</span><a class="load_index1">首页 </a> > <span class="active">游记</span>
 	</div>
 		<div class="travel_con">
 			<div class="top_qie">
-				<a href="">热门景点</a>
-				<a href="" class="active">最新推荐</a>
-				<a href="" >特色景点</a>
+				<a href="">最新游记</a>
+				<a href="" class="active">热门游记</a>
+				<a href="" >创意游记</a>
 				<!-- <a href="">花草园艺</a>  -->
 			</div>
 			<div class="tra_ul">
@@ -113,81 +146,35 @@
 					<a href="">产品分类四</a>
 					<a href="">产品分类五</a> -->
 				</div>
-				<ul class="clearfix" id="spotObject"> 
+				<ul class="clearfix" id="travelObject"> 
+					<!-- <li class="wow bounceIn cityObject" style="border:none"></li>
+					<li class="wow bounceIn cityObject" style="border:none"></li>
+					<li class="wow bounceIn cityObject" style="border:none"></li>
+					<li class="wow bounceIn cityObject" style="border:none"></li>
+					<li class="wow bounceIn cityObject" style="border:none"></li>
+					<li class="wow bounceIn cityObject" style="border:none"></li>
+					<li class="wow bounceIn cityObject" style="border:none"></li>
+					<li class="wow bounceIn cityObject" style="border:none"></li>
+					<li class="wow bounceIn cityObject" style="border:none"></li>
+					<li class="wow bounceIn cityObject" style="border:none"></li>
+					<li class="wow bounceIn cityObject" style="border:none"></li>
+					<li class="wow bounceIn cityObject" style="border:none"></li> -->
 				</ul>
 				<div class="page" id="pageId">
+						<!-- <a href=""><i class="ye fa fa-backward"></i></a>
+						<a href=""><i class="ye fa fa-caret-left"></i></a>
+						<a href="" class="active">1</a>
+						<a href="" class="">2</a>
+						<a href="" class="">3</a>
+						<span href="" class="">…</span> 
+						<a href=""><i class="ye fa fa-caret-right"></i></a>
+						<a href=""><i class="ye fa fa-forward"></i></a> -->
 				</div>
 			</div>
 		</div>
 		
 	
-	<div class="home_news">
-		<div class="news_con">
-			<div class="top_tit">
-				<span class="span1"><a href="news.html">新闻动态</a></span><br />
-				<span class="span2">NEWS</span>
-			</div>
-			<ul>
-				<li class="clearfix">
-					<div class="news_left">
-						<a href="news.html">暑假去哪玩？桃花苑天地避暑甚好！</a>
-						<p>
-							暑期近在眼前，还在犹豫带孩子去哪儿玩吗？炎热的夏天，一颗躁动的心，背上收拾好的背包，走遍大好河山
-							，感受大千世界，还不如隐居室外桃源桃花苑天地精品。少一些城市的喧嚣，回归大自然的清新脱俗，来一场说走就走的夏日之旅吧。
-						</p>
-					</div>
-					<div class="news_right">
-						<span>07.21</span>
-						<time>2016</time>
-					</div>
-				</li>
-				<li class="clearfix">
-					<div class="news_left">
-						<a href="news.html">花落流水春又去</a>
-						<p>
-							春暖花开，桃花苑天地精品大咖云集，活动丰富。不仅有适合小朋友们的春游活动，有适合老年朋友的喝茶加棋牌，
-							还有书法大咖们的加盟，乃至电视真人秀节目的拍摄。这可把桃花宝宝们忙坏了，不过没关系，累并快乐着，桃花宝宝非常欢迎大家的到来……
-						</p>
-					</div>
-					<div class="news_right">
-						<span>05.25</span>
-						<time>2016</time>
-					</div>
-				</li>
-				<li class="clearfix">
-					<div class="news_left">
-						<a href="news.html">蝴蝶摘花来</a>
-						<p>
-							清朝末年，先生在宁波开了一家面店，生意不错。一天，一位即将回国的美国华侨
-							，登船前来到卜先生的店里吃面，离店时竟把一只皮箱落下了。
-							先生打烊时才发现这只皮箱，但已无法找到失主，只好把皮箱小心收藏，等待着失主前来认领。
-						</p>
-					</div>
-					<div class="news_right">
-						<span>05.25</span>
-						<time>2016</time>
-					</div>
-				</li>
-				<li class="clearfix">
-					<div class="news_left">
-						<a href="news.html">这是我们想去的地方</a>
-						<p>
-							春暖花开，桃花苑天地精品大咖云集，活动丰富。不仅
-							有适合小朋友们的春游活动，有适合老年朋友的喝茶加棋牌，
-							还有书法大咖们的加盟，乃至电视真人秀节目的拍摄。
-							这可把桃花宝宝们忙坏了，不过没关系，累并快乐着，桃花宝宝非常欢迎大家的到来……
-						</p>
-					</div>
-					<div class="news_right">
-						<span>05.25</span>
-						<time>2016</time>
-					</div>
-				</li>
-			</ul>
-			<a href="news.html" class="more">MORE</a>
-		</div>
-	</div>
-
+	
 	
  
     <!--footer  start-->
@@ -202,6 +189,7 @@
 			   			<li><a class="load_spot">景点</a></li>
 			   			<li><a class="load_travel">游记</a></li>
 			   			</ul>
+	       				
        				</div>
        				<div class="clear"></div>
        				<div class="lian">
@@ -228,15 +216,13 @@
        		</div>
        		
        </div>
-       <!-- <div class="copy">Copyright© 2016  版权所有：上海珍岛茶业有限公司</div> -->
+       <div class="copy">Copyright© 2016  版权所有：上海珍岛茶业有限公司</div>
 	</footer>
     <!--footer  end-->
 
 	<!--移动端  Mmenu-->
 	<nav id="mmenu">
-		
 		<ul>
-			
 			<li>
 				<a class="load_index">首页</a>
 			</li>
@@ -245,7 +231,7 @@
    				<ul>
    					<li>
    						<a href="">热门城市</a>
-   					</li>  
+   					</li> 
    					<li>
    						<a href="">最新推荐</a>
    					</li>
@@ -254,7 +240,7 @@
    					</li>
    				</ul>
 		   	</li>
-   			<li><a class="load_spot active">景点</a>
+   			<li><a class="load_spot">景点</a>
    				<ul>
    					<li>
    						<a href="">热门景点</a>
@@ -267,7 +253,7 @@
    					</li>
    				</ul>
    			</li>
-   			<li><a class="load_travel">游记</a>
+   			<li><a class="load_travel active">游记</a>
    				<ul>
    					<li>
    						<a href="">最新游记</a>
@@ -286,47 +272,50 @@
    						<a href="">个人信息</a>
    					</li>  
    					<li>
-   						<a href="">私人游记</a>
+   						<a class="load_mytravel">私人游记</a>
    					</li>
    					
    				</ul>
    			</li>
-			 
 		</ul>
-	</nav>	</div>	
+	</nav>	
+</div>	
 
 <!--Include Js-->
-<script src="http://apps.bdimg.com/libs/jquery/1.8.3/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+ <script src="http://apps.bdimg.com/libs/jquery/1.8.3/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 
 <!--移动端导航-->
-<script src="../js/jquery.mmenu.all.min.js" type="text/javascript" charset="utf-8"></script>
+ <script src="../js/jquery.mmenu.all.min.js" type="text/javascript" charset="utf-8"></script> 
 
-<script src="../js/public.js" type="text/javascript" charset="utf-8"></script>
+ <script src="../js/public.js" type="text/javascript" charset="utf-8"></script> 
 
 <!--slick-->
 <script src="../js/slick.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="../js/wow.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/wow.js" type="text/javascript" charset="utf-8"></script> 
 
 <!--placeholder-->
-<script src="../js/jquery.placeholder.min.js" type="text/javascript" charset="utf-8"></script>
+ <script src="../js/jquery.placeholder.min.js" type="text/javascript" charset="utf-8"></script> 
 <script type="text/javascript">
 	 $(function(){ $('input, textarea').placeholder(); }); 
 	 $(function(){
-		 	$(".load_index").click(function(){
+		 
+		  $(".load_index").click(function(){
 		 		location.href="../doIndexUI.do";
 		 	})
 		    $(".load_city").click(function(){
 				location.href="../city/doCityUI.do";
 			})
 			$(".load_spot").click(function(){
-				location.href="doSpotUI.do";
+				location.href="../spot/doSpotUI.do";
 			})
 			$(".load_travel").click(function(){
-				location.href="../travel/doTravelUI.do";
+				location.href="doTravelUI.do";
 			})
-			
 			$(".load_user").click(function(){
 				location.href="../user/doUserUI.do";
+			})
+			$(".load_mytravel").click(function(){
+				location.href="doMytravel.do";
 			})
 			
 			$(".login").click(function(){
@@ -336,15 +325,13 @@
 				location.href="../doLogout.do";
 			})
 		 
-		 
-		 
 		  $("#pageId").load("../doPageUI.do",function(){
 			
 			findTripObjects();//ajax
 			//在此位置实现异步加载的目的是保证两个异步的顺序,里面的后执行
 			});//ajax 去执行doGetObjects()方法的同时执行下面代码
 			//doGetObjects();
-			
+			 
 			
 		});  
 		
@@ -362,7 +349,7 @@
 			
 			//1.定义请求的url
 			//debugger
-			var logUrl="http://localhost:8080/CROWN-BS-SYS-V1/spot/findPageObjects.do";
+			var logUrl="http://localhost:8080/CROWN-BS-SYS-V1/travel/findPageObjects.do";
 			//2.定义请求的参数
 			//var params="pageCurrent=1";
 			var pageCurrent =$("#pageId").data("pageCurrent");
@@ -372,9 +359,9 @@
 			//var params="pageCurrent="+pageCurrent;
 			var params={"pageCurrent":pageCurrent};
 			//点击查询按钮时，获取用户名，基于用户名执行查询操作。
-			/*  var city_name=$("#location").val(); 
+			 var city_name=$("#location").val(); 
 			//var params="pageCurrent="+pageCurrent+"&username="+username;
-			if(city_name)params.city_name=city_name; */
+			if(city_name)params.city_name=city_name;
 			//3.发送异步请求
 			$.ajax({//底层封装了XMLHttpRequest
 				url:logUrl,
@@ -399,7 +386,7 @@
 		function doSetTableBodyRows(records){
 			
 			//1.获取tbody对象，并清空
-			var tBody= $("#spotObject");
+			var tBody= $("#travelObject");
 			tBody.empty();//清空数据
 			//2.迭代记录，将数据呈现在tbody中
 			//for(var i=0;i<records.length;i++){}
@@ -418,17 +405,16 @@
 			
 		 var http_dz ="http://192.168.2.81:8002";
 			
-			var lis ='<a href="doSpotDetail.do?id='+row.id+'">'+
-			'<img style="width:100%" src="'+http_dz+'/static/jd_tp/'+row.imgname+'" class="vcenter" alt="picture"/>'+
+			var lis ='<a href="doTravelDetail.do?id='+row.id+'">'+
+			'<img style="width:100%" src="'+http_dz+'/static/yj_tp/'+row.picture+'" class="vcenter" alt="picture"/>'+
 			'<i></i>'+
 		'</a>'+
-		'<a href="doSpotDetail.do?id='+row.id+'">'+row.jdname+'</a>'
-			
+		/* '<a href="court_travel.html">'+row.yj_name+'</a>' */
+		'<a href="doTravelDetail.do?id='+row.id+'"><marquee scrollAmount=2 width=80% onmouseover=stop() onmouseout=start()>'+row.yj_name+'</marquee></a>' 
 			return lis; 
 		} 
 		
-
-	
+		
 	
 </script>
 

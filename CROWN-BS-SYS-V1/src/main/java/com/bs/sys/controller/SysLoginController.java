@@ -24,12 +24,12 @@ public class SysLoginController {
 		return "index";
 	}
 	
-	@RequestMapping(value={"doLoginUI","doLogin"})
+	@RequestMapping(value={"doLoginUI","doLogout"})
 	public String doLogout(){
 		return "login";
 	}
 	/**暂时注释,后面用shiro时开放*/
-	/*@RequestMapping("doLogin")
+	@RequestMapping("doLogin")
 	@ResponseBody
 	public JsonResult doLogin(String username,String password){
 		//1.对用户身份以及凭证信息进行封装
@@ -39,6 +39,6 @@ public class SysLoginController {
 		//3.通过主体对象提交用户token信息
 		subject.login(token);
 		return new JsonResult("login ok");
-	}*/
+	}
 	
 }

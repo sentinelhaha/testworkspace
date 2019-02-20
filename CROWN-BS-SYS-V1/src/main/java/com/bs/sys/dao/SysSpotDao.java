@@ -7,14 +7,17 @@ import org.apache.ibatis.annotations.Param;
 import com.bs.sys.entity.SysSpot;
 
 public interface SysSpotDao {
+	
+	SysSpot doFindSpotObjectById(Integer id);
+	
+	
 	List<SysSpot> findPageObjects(
-			@Param("jdname")String spotname,
 			@Param("startIndex")int startIndex,
 			@Param("pageSize")int pageSize);
 	
-	int getRowCount(@Param("jdname")String spotname);
+	int getRowCount();
 	
-	
+	SysSpot findSpot();
 	
 	
 	

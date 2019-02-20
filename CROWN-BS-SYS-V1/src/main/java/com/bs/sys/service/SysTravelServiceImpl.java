@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 import com.bs.common.exception.ServiceException;
 import com.bs.common.vo.PageObject;
 import com.bs.sys.dao.SysTravelDao;
-import com.bs.sys.entity.SysCity;
 import com.bs.sys.entity.SysTravel;
 
 
@@ -20,7 +19,13 @@ public class SysTravelServiceImpl implements SysTravelService{
 	@Autowired
 	private SysTravelDao sysTravelDao;
 	
-	
+	@Override
+	public SysTravel doFindTravelObjectById(Integer id) {
+		/*if(id==null || id==0)
+		throw new ServiceException("城市不能为空");*/
+		SysTravel travelObject = sysTravelDao.doFindTravelObjectById(id);
+		return travelObject;
+	}
 
 	@Override
 	public List<Map<String,Object>> findTripObjects() {
@@ -36,18 +41,19 @@ public class SysTravelServiceImpl implements SysTravelService{
 	}
 
 	@Override
-	public PageObject<SysTravel> findPageObjects(String travelname,
+	public PageObject<SysTravel> findPageObjects(
 			Integer pageCurrent) {
 		if(pageCurrent==null || pageCurrent<1)
 		throw new IllegalArgumentException("页码值无效");
-		/*int rowCount=sysTravelDao.getRowCount(travelname);*/
-		int rowCount =30348;
+		/*int rowCount=sysTravelDao.getRowCount();*/
+		/*int rowCount =30348;*/
+		int rowCount = 1052;
 		if(rowCount==0)
 		throw new ServiceException("没有对应记录");
 		int pageSize=12;
 		int startIndex = (pageCurrent-1)*pageSize;
 		List<SysTravel> records = sysTravelDao.
-				findPageObjects(travelname, startIndex, pageSize);
+				findPageObjects( startIndex, pageSize);
 		
 		for (int i = 0; i < records.size(); i++) {
 			SysTravel	row = records.get(i);

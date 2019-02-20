@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bs.sys.dao.SysCityDao">
-	<select id="getCityPicture"
+	<!-- <select id="getCityPicture"
 			resultType="com.bs.sys.vo.QJdImgTable">
 		select c.id,c.city_name,c.sheng_id,c.sheng_name,c.guoji_id,
 		c.guoji_name,c.zhouji_id,c.zhouji_name,c.city_img,c.city_jj,c.jianjie2
@@ -10,11 +10,20 @@
 		<include refid="queryWhereId"/>
 		limit 0,12;
 	</select>
+	 -->
+	<select id="doFindCityObjectById" 
+			resultType="com.bs.sys.entity.SysCity">
+		select id,city_name,sheng_id,sheng_name,guoji_id,
+		guoji_name,zhouji_id,zhouji_name,city_img,city_jj,jianjie2
+		from q_city_table where id=#{id}
+	
+	</select>
+	
 	
 	<select id="getRowCount"
 			resultType="int">
 		select count(*) from q_city_table
-		<include refid="queryWhereId"/>
+		<include refid="queryWhereShengName"/>
 	</select>
 	
 	<sql id="queryWhereId">
@@ -24,17 +33,24 @@
   			</if>
   		</where>
   	</sql>	
+	<sql id="queryWhereShengName">
+		<where>
+			<if test="sheng_name!=null and sheng_name!=''">
+				sheng_name=#{sheng_name}
+			</if>
+		</where>
 	
+	</sql>
 	<select id="findPageObjects"
 			resultType="com.bs.sys.entity.SysCity">
 		select c.id,c.city_name,c.sheng_id,c.sheng_name,c.guoji_id,
 		c.guoji_name,c.zhouji_id,c.zhouji_name,c.city_img,c.city_jj,c.jianjie2
 	    from q_city_table c
-		<include refid="queryWhereId"/>
+		<include refid="queryWhereShengName"/>
 		limit #{startIndex},#{pageSize}
 	
 	</select>
-
+	
 
 
 

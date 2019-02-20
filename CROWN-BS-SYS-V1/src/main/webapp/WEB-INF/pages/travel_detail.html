@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src="../js/jquery-1.4.2.js"/></script>
+
+<script >
+
+$(function(){
+	findCityDetail();
+})
+
+	function findCityDetail(){
+		var info = window.location.search;
+		info=info.substring(1,info.length);
+		var targetPageId=info.split("&")[0].split("=")[1];
+		
+		var city_detailUrl="http://localhost:8080/CROWN-BS-SYS-V1/travel/doFindTravelObjectById.do";
+		var params={"id":targetPageId};
+		$.ajax({
+			url:city_detailUrl,
+			data:params,
+			dataType:"json",
+			success:function(result){
+				console.log(result);
+				doHandleResponseResult(result);
+			}
+		});
+	}
+	function doHandleResponseResult(result){
+		if(result.state==1){
+		var citydiv = $(".travel_name");
+		var h3= $('<h3>'+result.data.yj_name+'</h3>');
+		citydiv.append(h3);
+		}else{
+			alert(result.message);
+		}
+		
+	}
+	
+</script>
+
+</head>
+<body class="ly_yj">
+	<div >
+		
+		<!-- <h1>游记介绍 </h1> -->
+	</div>
+	<!-- 导航标签渲染 -->
+	<div class="wrap_all">
+		<!-- 头部 start -->
+		<div class="e-header-wrap">
+			<div class="e-nav">
+				<p class="e-onion">
+					<a href="http://www.lvmama.com/lvyou/" title="旅游攻略首页">旅游攻略首页</a>"&nbsp;>&nbsp;"
+					<a href="http://www.lvmama.com/trip/" title="游记">游记</a>
+					&nbsp;>&nbsp;【我是达人】重返丽江，梦归大理 
+		     
+				</p>
+					<a href="http://www.lvmama.com/trip/write" class="nlogin">
+					<span class="e-l-send"></span>
+					发游记
+					</a>
+				<p class="e-link"></p>
+			</div>
+			<div class="e-top clearfix">
+				<div class="eh-head">
+					<img></img>
+				</div>
+				<div class="eh-title">
+					<div class="eht-top clearfix">
+						<h1 class="eh-text" title="【我是达人】重返丽江，梦归大理">
+	                       		 【我是达人】重返丽江，梦归大理</h1>
+					
+					</div>
+					<p class="eh-sundry">
+						<a class="eh-author" target="_blank" href="http://www.lvmama.com/trip/user/880">from sina weibo 在别处的完美生活(2192298044)</a>
+						
+                    于2017-09-05发布
+                    	<i>|</i>
+                    	
+                    8月出游
+                    <i>|</i>
+                    
+                    浏览10328次
+                	
+					</p>
+				</div>
+			</div>
+		<!-- 头部 end -->
+			<!-- 主体start -->
+			<div class="e-body clearfix">
+				<!-- 主体start -->
+				<div class="eb-main">
+					<!-- 文章start -->
+						<div class="ebm-post">
+						
+						</div>
+				</div>
+			
+			</div>
+			<!-- 主体end -->
+		</div>
+	
+	</div>
+	
+	<!-- 隐藏域start -->
+	<div>
+	</div>
+	<!-- 隐藏域 end-->
+	<!-- 顶部 start -->
+	<div></div>
+	<!-- 顶部 end -->
+	<!-- 脚本使用end -->
+	<!-- 公共脚本 -->
+	
+	
+	
+	
+	<div class="travel_name"></div>
+	<div>
+		<p>
+			云南对于很多人来说是必去的旅游地之一。去过云南的人都想再去一次因为那里有令人向往且难以忘怀的美景、美食和热情淳朴的民风。这一次重返丽江大理带着妈妈一起去旅行。
+		</p>
+	</div>
+	<div><img alt="" src="../images/picture/1.jpg"></div>
+	<div>
+		<h2>城市概述</h2>
+	</div>
+	<div>
+		<p>
+			丽江阳光纳里（高球之家） 地址：丽江 古城区 光义街新院巷2号 ，近官门口，木府。 【 大研古镇 木府 】 来丽江必住客栈，体验一下。这家是高大上的高尔夫主题客栈，整体风格是清新、简单，每个装饰都很自然，既不刻意也不多余。客房面积阔绰，装修简约时尚，清雅禅意，硬件设施也高大上，床很舒服，卫生间干净整洁，住下舒适度满意。院落布置的雅致白天没事坐在院子里喝喝滇红，云南小粒咖啡，发呆也是一种享受。值得一提的就是管家服务，听说丽江每家客栈都有管家，但阳光纳里的管家很专业，特别是广东来的小哥拾叁很热情，真诚，贴心。
+		</p>
+	</div>
+	<div>
+		
+	</div>
+</body>
+</html>

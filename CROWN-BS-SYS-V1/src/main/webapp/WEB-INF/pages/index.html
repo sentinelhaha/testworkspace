@@ -44,10 +44,10 @@
 			
 			
 			$(".login").click(function(){
-				location.href="doLogin.do";
+				location.href="doLoginUI.do";
 			})
 			$(".logout").click(function(){
-				location.href="doLogin.do";
+				location.href="doLogout.do";
 			})
 			
 					findTripObjects();
@@ -62,16 +62,17 @@
 					console.log(urls);
 					//2.定义请求的参数
 					//var params="pageCurrent=1";
-					var n1=Math.floor(Math.random()*10+1);
-					console.log(n1);
-					var params={"pageCurrent":n1};
-					console.log(params);
+					/* var n1=Math.floor(Math.random()*10+1);
+					console.log(n1); */
+					/* var params={"pageCurrent":1,"sheng_name":"四川"}; */
+					/* console.log(params); */
 					//3.发送异步请求
 					var url="";
 					for (var j in urls){
 					if(j==0){
 						url=urls[0];
 						console.log(url);
+						var params={"pageCurrent":1,"sheng_name":"四川"};
 					$.ajax({//底层封装了XMLHttpRequest
 						url:url,
 						data:params,
@@ -85,6 +86,7 @@
 					}else if(j==1){
 						url=urls[1];
 						console.log(url);
+						var params={"pageCurrent":1};
 					$.ajax({//底层封装了XMLHttpRequest
 						url:url,
 						data:params,
@@ -98,6 +100,7 @@
 					}else if(j==2){
 						url=urls[2];
 						console.log(url);
+						var params={"pageCurrent":1};
 					$.ajax({//底层封装了XMLHttpRequest
 						url:url,
 						data:params,
@@ -152,24 +155,24 @@
 				}
 				function doCreateTds(row,pictureUrl,b){
 					if(b==0){
-						var lis ='<a href="court_travel.html">'+
+						var lis ='<a href="city/doCityDetail.do?id='+row.id+'">'+
 						'<img style="width:100%" src="'+pictureUrl+'/static/lunbo/'+row.city_img+'" class="vcenter" alt="picture"/>'+
 						'<i></i>'+
 					'</a>'+
-					'<a href="court_travel.html">'+row.city_name+'</a>'
+					'<a href="city/doCityDetail.do?id='+row.id+'">'+row.city_name+'</a>'
 					}else if(b==1){
-						var lis ='<a href="court_travel.html">'+
+						var lis ='<a href="spot/doSpotDetail.do?id='+row.id+'">'+
 						'<img style="width:100%" src="'+pictureUrl+'/static/jd_tp/'+row.imgname+'" class="vcenter" alt="picture"/>'+
 						'<i></i>'+
 					'</a>'+
-					'<a href="court_travel.html">'+row.jdname+'</a>'
+					'<a href="spot/doSpotDetail.do?id='+row.id+'">'+row.jdname+'</a>'
 					}else if(b==2){
-						var lis ='<a href="court_travel.html">'+
+						var lis ='<a href="travel/doTravelDetail.do?id='+row.id+'">'+
 						'<img style="width:100%" src="'+pictureUrl+'/static/yj_tp/'+row.picture+'" class="vcenter" alt="picture"/>'+
 						'<i></i>'+
 					'</a>'+
 					/* '<a class="travelPicture" href="court_travel.html">'+row.yj_name+'</a>' */
- 					'<a class="travelPicture" href="court_travel.html"><marquee scrollAmount=2 width=80% onmouseover=stop() onmouseout=start()>'+row.yj_name+'</marquee></a>' 
+ 					'<a href="travel/doTravelDetail.do?id='+row.id+'"><marquee scrollAmount=2 width=80% onmouseover=stop() onmouseout=start()>'+row.yj_name+'</marquee></a>' 
 					}
 					return lis; 
 				} 
@@ -203,29 +206,29 @@
 		   			<li><a class="load_index active">首页</a></li>
 		   			<li><a class="load_city">城市</a>
 		   				<ul>
-		   					<li><a href="court_travel.html">热门城市</a></li>  
-		   					<li><a href="court_travel.html">最新推荐</a></li>
-		   					<li><a href="court_travel.html">文化名城</a></li>
+		   					<li><a href="">热门城市</a></li>  
+		   					<li><a href="">最新推荐</a></li>
+		   					<li><a href="">文化名城</a></li>
 		   				</ul>
 		   			</li>
 		   			<li><a class="load_spot">景点</a>
 		   				<ul>
-		   					<li><a href="court_travel.html">热门景点</a></li>  
-		   					<li><a href="court_travel.html">最新推荐</a></li>
-		   					<li><a href="court_travel.html">特色景点</a></li>
+		   					<li><a href="">热门景点</a></li>  
+		   					<li><a href="">最新推荐</a></li>
+		   					<li><a href="">特色景点</a></li>
 		   				</ul>
 		   			</li>
 		   			<li><a class="load_travel">游记</a>
 		   				<ul>
-		   					<li><a href="court_travel.html">最新游记</a></li>  
-		   					<li><a href="court_travel.html">热门游记</a></li>
-		   					<li><a href="court_travel.html">创意游记</a></li>
+		   					<li><a href="">最新游记</a></li>  
+		   					<li><a href="">热门游记</a></li>
+		   					<li><a href="">创意游记</a></li>
 		   				</ul>
 		   			</li>
 		   			<li><a class="load_user">个人</a>
 		   				<ul>
-		   					<li><a href="court_travel.html">个人信息</a></li>  
-		   					<li><a href="court_travel.html">私人游记</a></li>
+		   					<li><a href="">个人信息</a></li>  
+		   					<li><a href="">私人游记</a></li>
 		   					
 		   				</ul>
 		   			</li>
@@ -264,13 +267,15 @@
 	<div class="jqgk">
 		<div class="contai">
 			<div class="top_tit">
-				<span class="span1"><a class="load_spot">景区概况</a></span><br />
-				<span class="span2">SCENIC OVERVIEW</span>
+				<span class="span1"><a class="load_spot">巴蜀概况</a></span><br />
+				<span class="span2">BASHU GENERAL SITUATION</span>
 			</div>
 			<p class="wow bounceIn">
-				上海珍岛商业管理有限公司位于国家级经济技术开发区，是首批专注于精品民宿的新型创业连锁平台。<br />
-公司成立于2016年2月，注册资金1000万元。珍岛使命在于构筑“万众创新、大众创业”的新型平台，建立一个为历史和未来负责的、“留得住浓浓的乡愁”的城镇化村落服务体系，<br />
-为中国城镇化进程中的美丽乡村建设贡献一份力量。
+				巴蜀山水，钟灵毓秀，自古是人们向往的美丽富饶、安宁祥和、气象万千的梦中仙境，
+				早有“天府之国”的雅号，而“东方伊甸园”的美称更使之别具浪漫情调。
+				秀甲九州的佛国 、鬼斧神工的、幽绝天下的道教名山青城、惠泽千秋的、国宝 的故乡卧龙、绿波浩瀚的 、
+				奇峻险绝的 、银装素裹的贡嘎山、“温暖” 的南国冰雪世界 ；还有“童话世界”九寨沟、 “人间瑶池” 、
+				“神秘女儿国” 、最后的 “香格里拉”稻城亚丁……无数的旷世奇景齐聚于斯，天地造化竟如此垂青这块令人心旷神怡的土地!
 			</p>
 			<div class="xia_x">
 				<span class="img"></span>
@@ -299,7 +304,7 @@
 	<div class="wyzl">
 		<div class="top_tit">
 			<span class="span1"><a class="load_travel">游记动态</a></span><br />
-			<span class="span2">TRAVEL</span> 
+			<span class="span2">TRIPNOTES</span> 
 		</div>
 		<ul class="clearfix" id="travelObject"> 
 		</ul>
@@ -311,7 +316,7 @@
 		<div class="news_con">
 			<div class="top_tit">
 				<span class="span1"><a class="load_travel">游记动态</a></span><br />
-				<span class="span2">TRIPNOTE</span>
+				<span class="span2">TRIPNOTES</span>
 			</div>
 			<ul >
 				<li class="clearfix wow bounceIn">
@@ -401,11 +406,11 @@
        				</div>
        				<div class="clear"></div>
        				<div class="lian">
-       					电话：<a href="tel:021-31265245">021-31265245</a><br />
-						邮箱：<a href="mailto:Eason.wang@71360.com">Eason.wang@71360.com</a><br />
-						手机：<a href="tel:189 1610 1908">189 1610 1908</a><br />
-						地址：上海市虹口区水电路682号 天虹商务大厦6F、7F、11F<br />
-						<a href="map.html">网站地图</a><br />
+       					电话：<a href="tel:021-31265369">021-31265369</a><br />
+						邮箱：<a href="mailto:jackson.li@72650.com">jackson.li@72650.com</a><br />
+						手机：<a href="tel:17832459756">178 3245 9756</a><br />
+					<!-- 	地址：上海市虹口区水电路682号 天虹商务大厦6F、7F、11F<br /> -->
+						<!-- <a href="map.html">网站地图</a><br /> -->
 						<span> 
 							<a href="http://www.71360.com/" target="_blank">
 								<img src="images/yu.png" alt="" />
@@ -413,7 +418,7 @@
 							
 							<span class="er_a">
 								<img src="images/er.png" alt="" class="one_img"/> 
-								珍岛公众号
+								巴蜀公众号
 								<img src="images/erwei.png" alt="" class="er_img"/>
 							</span>
 							
@@ -424,7 +429,7 @@
        		</div>
        		
        </div>
-       <div class="copy">Copyright© 2016  版权所有：上海珍岛茶业有限公司</div>
+       <!-- <div class="copy">Copyright© 2016  版权所有：上海珍岛茶业有限公司</div> -->
 	</footer>
     <!--footer  end-->
 
@@ -440,49 +445,49 @@
    				<a class="load_city">城市</a>
    				<ul>
    					<li>
-   						<a href="court_travel.html">热门城市</a>
+   						<a href="">热门城市</a>
    					</li>  
    					<li>
-   						<a href="court_travel.html">最新推荐</a>
+   						<a href="">最新推荐</a>
    					</li>
    					<li>
-   						<a href="court_travel.html">文化名城</a>
+   						<a href="">文化名城</a>
    					</li>
    				</ul>
 		   	</li>
    			<li><a class="load_spot">景点</a>
    				<ul>
    					<li>
-   						<a href="court_travel.html">热门景点</a>
+   						<a href="">热门景点</a>
    					</li>  
    					<li>
-   						<a href="court_travel.html">最新推荐</a>
+   						<a href="">最新推荐</a>
    					</li>
    					<li>
-   						<a href="court_travel.html">特色景点</a>
+   						<a href="">特色景点</a>
    					</li>
    				</ul>
    			</li>
    			<li><a class="load_travel">游记</a>
    				<ul>
    					<li>
-   						<a href="court_travel.html">最新游记</a>
+   						<a href="">最新游记</a>
    					</li>  
    					<li>
-   						<a href="court_travel.html">热门游记</a>
+   						<a href="">热门游记</a>
    					</li>
    					<li>
-   						<a href="court_travel.html">创意游记</a>
+   						<a href="">创意游记</a>
    					</li>
    				</ul>
    			</li>
    			<li><a class="load_user">个人</a>
    				<ul>
    					<li>
-   						<a href="court_travel.html">个人信息</a>
+   						<a href="">个人信息</a>
    					</li>  
    					<li>
-   						<a href="court_travel.html">私人游记</a>
+   						<a href="">私人游记</a>
    					</li>
    					
    				</ul>

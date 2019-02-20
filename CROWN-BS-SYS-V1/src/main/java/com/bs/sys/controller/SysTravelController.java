@@ -22,6 +22,18 @@ public class SysTravelController {
 		return "travel_list";
 	}
 	
+	@RequestMapping("doTravelDetail")
+	public String doTravelDetail(){
+		return "travel_detail";
+	}
+	
+	@RequestMapping("doFindTravelObjectById")
+	@ResponseBody
+	public JsonResult doFindTravelObjectById (Integer id){
+		
+		return new JsonResult(sysTravelService.doFindTravelObjectById(id));
+	}
+	
 	
 	@RequestMapping("findTripObjects")
 	@ResponseBody
@@ -32,9 +44,9 @@ public class SysTravelController {
 	}
 	@RequestMapping("findPageObjects")
 	@ResponseBody
-	public JsonResult findPageObjects(String travelname,Integer pageCurrent){
+	public JsonResult findPageObjects(Integer pageCurrent){
 		PageObject<SysTravel> data = 
-	sysTravelService.findPageObjects(travelname, pageCurrent);
+	sysTravelService.findPageObjects( pageCurrent);
 		return new JsonResult(data);
 	}
 }

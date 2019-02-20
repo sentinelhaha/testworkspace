@@ -5,16 +5,15 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 import com.bs.sys.entity.SysCity;
-import com.bs.sys.vo.QJdImgTable;
 
 public interface SysCityDao {
 	
-	List<SysCity> doFindCityObjects(@Param("cityname")String cityname) ;
+	SysCity doFindCityObjectById(@Param("id") Integer id);
 	
-	int getRowCount(@Param("city_name") String city_name);
+	int getRowCount(@Param("sheng_name") String sheng_name);
 
 	List<SysCity> findPageObjects(
-			@Param("city_name")String city_name,
+			@Param("sheng_name")String sheng_name,
 			@Param("startIndex")int startIndex,
 			@Param("pageSize")int pageSize);
 }

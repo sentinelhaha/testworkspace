@@ -45,7 +45,7 @@
 		<!-- 基于用户名查询用户对象 -->
 	<select id="findUserByUserName" 
 	resultType="com.bs.sys.entity.SysUser">
-		select * from sys_users where user=#{user}
+		select * from user_info where user=#{user}
 	
 	</select>
 		

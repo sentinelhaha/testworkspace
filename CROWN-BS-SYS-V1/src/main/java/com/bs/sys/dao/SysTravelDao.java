@@ -9,6 +9,10 @@ import com.bs.sys.entity.SysTravel;
 
 public interface SysTravelDao {
 	
+	
+	SysTravel doFindTravelObjectById(Integer id);
+	
+	
 	List<Map<String, Object>> findTripObjects() ;
 	
 	/**
@@ -20,10 +24,9 @@ public interface SysTravelDao {
 	List<Map<String, Object>> findObjects();
 
 	
-	int getRowCount(@Param("yj_name")String travelname);
+	int getRowCount();
 	
 	List<SysTravel> findPageObjects(
-			@Param("yj_name")String travelname,
 			@Param("startIndex")Integer startIndex,
 			@Param("pageSize")Integer pageSize);
 	

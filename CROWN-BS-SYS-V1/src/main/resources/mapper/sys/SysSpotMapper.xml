@@ -3,28 +3,52 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bs.sys.dao.SysSpotDao">
 
+
+
+	<select id="doFindSpotObjectById" 
+			resultType="com.bs.sys.entity.SysSpot">
+		select *
+		from q_jd_table where id=#{id}
+	
+	</select>
+
+
 	<select id="getRowCount"
 			resultType="int">
 		select count(*) from q_jd_table 
-		<include refid="queryWhereId"/>
+		<include refid="queryWhereCityId"/>
 		
 			
 	</select>
 
-	<sql id="queryWhereId">
+	<!-- <sql id="queryWhereId">
 		<where>
 			<if test="jdname!=null and jdname!=''">
 				jdname like concat("%",#{spotname},"%")
 			</if>
 		</where>
+	</sql> -->
+	
+	<sql id="queryWhereCityId">
+		<where>
+			
+				cast(city_id as signed) between 1015101 and 1015121
+			
+		</where>
 	</sql>
+	
+	
 	<select id="findPageObjects"
 			resultType="com.bs.sys.entity.SysSpot">
-		select id,jdname,city_id,imgname,nr from q_jd_table 
-		<include refid="queryWhereId"/>
+		select * from q_jd_table 
+		<include refid="queryWhereCityId"/>
 		limit #{startIndex},#{pageSize}
 	</select>
-
+	<select id="findSpot"
+			resultType="com.bs.sys.entity.SysSpot">
+		select * from q_jd_table
+	
+	</select>
 
 
 

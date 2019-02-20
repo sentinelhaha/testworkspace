@@ -22,16 +22,31 @@ public class SysSpotController {
 	public String doSpotUI(){
 		return "spot_list";
 	}
+	@RequestMapping("doSpotDetail")
+	public String doSpotDetail(){
+		return "spot_detail";
+	}
+	@RequestMapping("doFindSpotObjectById")
+	@ResponseBody
+	public JsonResult doFindSpotObjectById (Integer id){
+		
+		return new JsonResult(sysSpotService.doFindSpotObjectById(id));
+	}
 	@RequestMapping("findPageObjects")
 	@ResponseBody
-	public JsonResult findPageObjects(String spotname,Integer pageCurrent){
+	public JsonResult findPageObjects(Integer pageCurrent){
 		PageObject<SysSpot> data = sysSpotService.findPageObjects(
-				spotname, pageCurrent);
+				 pageCurrent);
 		return new JsonResult(data);
 	}
 	
-	
-	
+	@RequestMapping("doSpot")
+	@ResponseBody
+	public JsonResult findSpot(){
+		
+		return new JsonResult(sysSpotService.findSpot());
+		
+	}
 }
 
 

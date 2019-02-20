@@ -1,15 +1,14 @@
 package com.bs.sys.service;
 
-import java.util.List;
 import com.bs.common.vo.PageObject;
 import com.bs.sys.entity.SysCity;
 
 public interface SysCityService {
-	List<SysCity> doFindCityObjects(String cityname);
+	SysCity doFindCityObjectById(Integer id);
 	
 	
 	
-	 PageObject<SysCity> findPageObjects(String city_name,
+	 PageObject<SysCity> findPageObjects(String sheng_name,
 				Integer pageCurrent);
 	
 }

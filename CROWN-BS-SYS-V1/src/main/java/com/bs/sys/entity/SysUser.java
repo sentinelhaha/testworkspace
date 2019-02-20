@@ -23,7 +23,7 @@ public class SysUser implements Serializable{
 	private String sign_self;
 	private String photo;
 	private String gender;
-	private String update;
+	private String update_password;
 	private String zt;
 	public Integer getId() {
 		return id;
@@ -103,12 +103,14 @@ public class SysUser implements Serializable{
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	public String getUpdate() {
-		return update;
+	
+	public String getUpdate_password() {
+		return update_password;
 	}
-	public void setUpdate(String update) {
-		this.update = update;
+	public void setUpdate_password(String update_password) {
+		this.update_password = update_password;
 	}
+	
 	public String getZt() {
 		return zt;
 	}

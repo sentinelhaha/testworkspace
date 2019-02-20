@@ -7,11 +7,11 @@ import com.bs.sys.entity.SysSpot;
 
 public interface SysSpotService {
 	 
+	SysSpot doFindSpotObjectById(Integer id);
 	
 	
+	 PageObject<SysSpot> findPageObjects(Integer pageCurrent);
 	
-	 PageObject<SysSpot> findPageObjects(String spotname,Integer pageCurrent);
-	
-	
+	 SysSpot findSpot ();
 	
 }

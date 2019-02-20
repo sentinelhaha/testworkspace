@@ -12,6 +12,7 @@ public class SysTravel implements Serializable{
 	private String city_name;
 	private String city_id;
 	private String yj_name;
+	private String url;
 	private String yj_zz;
 	private String cf_time;
 	private String cf_time2;
@@ -25,7 +26,6 @@ public class SysTravel implements Serializable{
 	private String rm;
 	private String imgname;
 	private String picture;
-	private String url;
 	
 	
 	public String getImgname() {

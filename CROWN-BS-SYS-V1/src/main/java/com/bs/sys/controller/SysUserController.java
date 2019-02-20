@@ -12,6 +12,8 @@ public class SysUserController {
 		
 		return "user_list";
 	}
-	
-	
+	@RequestMapping("doMytravel")
+	public String doMytravel(){
+		return "mytravel_list";
+	}
 }

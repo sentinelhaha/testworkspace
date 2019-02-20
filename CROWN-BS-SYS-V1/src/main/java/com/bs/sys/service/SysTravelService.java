@@ -8,6 +8,11 @@ import com.bs.sys.entity.SysTravel;
 
 public interface SysTravelService {
 
+	SysTravel doFindTravelObjectById(Integer id);
+	
+	
+	
+	
 	List<Map<String, Object>> findTripObjects();
 	
 	
@@ -17,5 +22,5 @@ public interface SysTravelService {
 	 * 通过数据层对象获取所有菜单信息
 	 * @return
 	 */
-	PageObject<SysTravel> findPageObjects (String travelname,Integer pageCurrent);
+	PageObject<SysTravel> findPageObjects (Integer pageCurrent);
 }

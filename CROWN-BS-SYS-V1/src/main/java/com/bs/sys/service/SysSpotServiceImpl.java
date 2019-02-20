@@ -15,20 +15,25 @@ public class SysSpotServiceImpl implements SysSpotService{
 	
 	@Autowired
 	private SysSpotDao sysSpotDao;
-
-	
-
 	@Override
-	public PageObject<SysSpot> findPageObjects(String spotname, Integer pageCurrent) {
+	public SysSpot doFindSpotObjectById(Integer id) {
+		/*if(id==null || id==0)
+		throw new ServiceException("城市不能为空");*/
+		SysSpot spotObject = sysSpotDao.doFindSpotObjectById(id);
+		return spotObject;
+	}
+	
+	@Override
+	public PageObject<SysSpot> findPageObjects( Integer pageCurrent) {
 		if(pageCurrent==null || pageCurrent<1)
 		throw new IllegalArgumentException("页码值无效");
-		int rowCount= sysSpotDao.getRowCount(spotname);
+		int rowCount= sysSpotDao.getRowCount();
 		if(rowCount==0)
 		throw new ServiceException("没有对应记录");
 		int pageSize=12;
 		int indexStart=(pageCurrent-1)*pageSize;
 		List<SysSpot> records = sysSpotDao.findPageObjects(
-			spotname, indexStart, pageSize);
+				 indexStart, pageSize);
 		PageObject<SysSpot> pageObject = new PageObject<SysSpot>();		
 		pageObject.setPageCurrent(pageCurrent);
 		pageObject.setPageSize(pageSize);
@@ -38,8 +43,12 @@ public class SysSpotServiceImpl implements SysSpotService{
 		pageObject.setPageCount(pageCount);
 		return pageObject;
 	}
-	
-	
+	@Override
+	public SysSpot findSpot(){
+		
+		return sysSpotDao.findSpot();
+		
+	}
 	
 	
 	
