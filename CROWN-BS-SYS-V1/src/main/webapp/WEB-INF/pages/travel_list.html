@@ -346,7 +346,7 @@ text-decoration: none;
 			
 			//1.定义请求的url
 			//debugger
-			var logUrl="http://localhost:8080/CROWN-BS-SYS-V1/travel/findPageObjects.do";
+			var logUrl="http://192.168.2.21:8080/CROWN-BS-SYS-V1/travel/findPageObjects.do";
 			//2.定义请求的参数
 			//var params="pageCurrent=1";
 			var pageCurrent =$("#pageId").data("pageCurrent");
@@ -400,7 +400,7 @@ text-decoration: none;
 		}
 		function doCreateTds(row){
 			
-		 var http_dz ="http://192.168.2.81:8002";
+		 var http_dz ="http://180.178.56.50:8002";
 			
 			var lis ='<a href="doTravelDetail.do?id='+row.id+'">'+
 			'<img style="width:100%" src="'+http_dz+'/static/yj_tp/'+row.picture+'" class="vcenter" alt="picture"/>'+
@@ -415,7 +415,7 @@ text-decoration: none;
 	
 </script>
 
-<!--<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 </body>
 </html>

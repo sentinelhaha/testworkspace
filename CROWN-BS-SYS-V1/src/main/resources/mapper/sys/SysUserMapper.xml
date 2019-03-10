@@ -33,12 +33,14 @@
            parameterType="com.bs.sys.entity.SysUser"
            useGeneratedKeys="true"
            keyProperty="id">
-      insert into sys_users
-      (username,password,deptId,email,mobile,salt,valid,
-      createdTime,modifiedTime,createdUser,modifiedUser)
+      insert into user_info
+      (user,email,phone,password,salt,regi_time,lin_time,
+      lout_time,birthday,sign_self,photo,gender,update_password,zt)
+      
       values
-      (#{username},#{password},#{deptId},#{email},#{mobile},#{salt},#{valid},
-      now(),now(),#{createdUser},#{modifiedUser})
+      (#{user},#{email},#{phone},#{password},#{salt},now(),now(),
+      now(),#{birthday},#{sign_self},#{photo},#{gender},
+      #{update_password},#{zt})
    </insert>
 	
 	

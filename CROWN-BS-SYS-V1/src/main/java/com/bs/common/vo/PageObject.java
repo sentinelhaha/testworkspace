@@ -21,7 +21,7 @@ public class PageObject<T> implements Serializable{
 	private Integer pageSize=3;
 	/**总页数(由总记录数和页面大小计算得到)*/
 	private Integer pageCount=0;
-	private String pictureUrl="http://192.168.2.81:8002";
+	private String pictureUrl="http://180.178.56.50:8002";
 	
 	public String getPictureUrl() {
 		return pictureUrl;

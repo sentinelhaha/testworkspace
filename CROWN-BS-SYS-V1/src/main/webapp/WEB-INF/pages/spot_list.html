@@ -326,6 +326,7 @@
 			})
 			
 			$(".load_user").click(function(){
+				debugger
 				location.href="../user/doUserUI.do";
 			})
 			
@@ -359,10 +360,9 @@
 		
 		//异步加载服务端数据，并将数据呈现在页面上
 		function findTripObjects(){
-			
-			//1.定义请求的url
+ 			//1.定义请求的url
 			//debugger
-			var logUrl="http://localhost:8080/CROWN-BS-SYS-V1/spot/findPageObjects.do";
+			var logUrl="http://192.168.2.21:8080/CROWN-BS-SYS-V1/spot/findPageObjects.do";
 			//2.定义请求的参数
 			//var params="pageCurrent=1";
 			var pageCurrent =$("#pageId").data("pageCurrent");
@@ -416,7 +416,7 @@
 		}
 		function doCreateTds(row){
 			
-		 var http_dz ="http://192.168.2.81:8002";
+		 var http_dz ="http://180.178.56.50:8002";
 			
 			var lis ='<a href="doSpotDetail.do?id='+row.id+'">'+
 			'<img style="width:100%" src="'+http_dz+'/static/jd_tp/'+row.imgname+'" class="vcenter" alt="picture"/>'+
@@ -432,7 +432,7 @@
 	
 </script>
 
-<!--<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 </body>
 </html>

@@ -1674,7 +1674,8 @@ ul li {
   margin: auto;
   padding-top: 20px;
 }
-.travel_con .tra_ul .clearfix li {
+/* 不动 */
+.travel_con .tra_ul ul li {
   float: left;
   width: 31.333%;
   position: relative;
@@ -1682,27 +1683,9 @@ ul li {
   margin-left: 2%;
   margin-bottom: 40px;
 }
-#pages1{
-	 width: 90%;
-	 left:5%;
-  text-align: center;
-  margin: auto;
-  padding-top: 20px;
-  padding-left:25%;
-}
-#pages1>li ,#pages1{
- 
-float:left;
-list-style:none;
-text-decoration: none;
-
-}
-#pages1 a:hover{
-	text-decoration: none;
-}
 
 
-
+/* 不动 */
 .travel_con .tra_ul ul li a {
   display: block;
   position: relative;
@@ -1711,23 +1694,15 @@ text-decoration: none;
   line-height: 30px;
   overflow: hidden;
 }
-.travel_con #spotObject{
-	overflow:visible;
-	text-overflow:ellipsis;
-	white-space:nowrap;
-}
-.travel_con #travelObject{
-	overflow:visible;
-	text-overflow:ellipsis;
-	white-space:nowrap;
-}
 
 
 
+/* 不动 */
 .travel_con .tra_ul ul li a img {
   z-index: 9999;
   transition: 0.3s;
 }
+/* 不动 */
 .travel_con .tra_ul ul li a i {
   display: block;
   padding-bottom: 71.05263157894737%;
@@ -1739,7 +1714,12 @@ text-decoration: none;
 .travel_con .tra_ul ul li a:hover img {
   transform: scale(1.1);
 }
-/* .travel_con .tra_ul ul li:after {
+
+
+
+
+
+.travel_con .tra_ul ul li:after {
   content: "";
   padding-bottom: 71.05263157894737%;
   border: 1px solid #d9d9d9;
@@ -1748,22 +1728,17 @@ text-decoration: none;
   top: -10px;
   left: -10px;
   z-index: 9;
-} */
-
-#pageId{
-	display: block;
-	padding: 10px;
-	
-} 
-
+}
 
 .travel_con .tra_ul ul li:hover:after {
   border: 1px solid #81a849;
 }
+/* 不动 */
 @media (max-width: 640px) {
   .travel_con .tra_ul ul {
     width: 80%;
   }
+  /* 不动 */
   .travel_con .tra_ul ul li {
     width: 100%;
     float: none;
@@ -1771,6 +1746,7 @@ text-decoration: none;
     margin-left: 4%;
   }
 }
+/* 不动 */
 .travel_con .tra_ul .top_a {
   text-align: center;
   margin: 20px auto 10px;
@@ -1937,7 +1913,7 @@ text-decoration: none;
 }
 .page .active {
   color: #81a849;
-  text-decoration: line-through;
+  /* text-decoration: line-through; */
   font-weight: bold;
 }
 .page a {
@@ -1950,13 +1926,13 @@ text-decoration: none;
 }
 .page a:hover {
   color: #81a849;
-  text-decoration: line-through;
+  /* text-decoration: line-through; */
   font-weight: bold;
 }
 .page .ye {
   color: #999999;
   margin: 0px 2px;
-  width: 30px;
+  width: 100px;
   height: 30px;
   display: inline-block;
   line-height: 30px;

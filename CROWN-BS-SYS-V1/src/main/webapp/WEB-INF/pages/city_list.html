@@ -3,9 +3,9 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>珍岛集团</title>
-	<meta name="keywords" content="珍岛集团">
-	<meta name="description" content="珍岛集团">
+	<title>巴蜀旅行</title>
+	<meta name="keywords" content="巴蜀旅行">
+	<meta name="description" content="巴蜀旅行">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="shortcut icon" href="../images/favicon.ico">
 	
@@ -65,7 +65,7 @@ text-decoration: none;
 		   <div class="logo">
 	   	   		<a href="doIndexUI.do"><img src="../images/logo.png" alt="" /></a>
 		   </div>
-		   <a href="#mmenu" class="phone-nav"><i class="fa fa-list"></i></a>
+		   <!-- <a href="#mmenu" class="phone-nav"><i class="fa fa-list"></i></a>
 		  <div class="logo_right">
 		  	 <nav class="nav">
 		   		<ul>    
@@ -101,15 +101,15 @@ text-decoration: none;
 		   			
 		   		</ul>
 		  	 </nav>
-		  	 <div class="search">
+		  	 <div class="search"> -->
 		  	 	<!-- <span class="sea_x">
 		  	 		<input type="" name="" id="" placeholder="请输入关键词">
 		  	 		<i class="fa fa-search"></i>		  	
 		  	 	</span> -->
-		  	 	<span class="y_z">
+		  	 	<!-- <span class="y_z">
 		  	 		<a href="#" class="zh active login">登录</a><a href="#" class="en logout">注销</a>
 		  	 		
-		  	 	</span>
+		  	 	</span> -->
 		  	 <!-- 	<span class="y_z">
 		  	 		<input type="button" value="登录" id="login">
 		  	 	</span>
@@ -117,8 +117,8 @@ text-decoration: none;
 		  	 		<input type="button" value="注销" id="logout">
 		  	 	</span> -->
 		  	 	
-		  	 </div>
-		  </div>
+		  <!-- 	 </div>
+		  </div> -->
 	   	
 	   </div>
 	</header>
@@ -133,9 +133,9 @@ text-decoration: none;
 	</div>
 		<div class="travel_con">
 			<div class="top_qie">
-				<a href="">热门城市</a>
+				<!-- <a href="">热门城市</a> -->
 				<a href="" class="active">最新推荐</a>
-				<a href="" >文化名城</a>
+				<!-- <a href="" >文化名城</a> -->
 				<!-- <a href="">花草园艺</a>  -->
 			</div>
 			<div class="tra_ul">
@@ -182,7 +182,7 @@ text-decoration: none;
        <div class="footer_con">
        		<div class="con">
        			<div class="nei">
-       				<div class="">
+       				<!-- <div class="">
        					<ul class="di_nav clearfix">
 			   			<li><a class="load_index">首页</a></li>
 			   			<li><a class="load_city">城市</a></li>
@@ -190,7 +190,7 @@ text-decoration: none;
 			   			<li><a class="load_travel">游记</a></li>
 			   			</ul>
 	       				
-       				</div>
+       				</div> -->
        				<div class="clear"></div>
        				<div class="lian">
        					电话：<a href="tel:021-31265369">021-31265369</a><br />
@@ -221,7 +221,7 @@ text-decoration: none;
     <!--footer  end-->
 
 	<!--移动端  Mmenu-->
-	<nav id="mmenu">
+	<!-- <nav id="mmenu">
 		<ul>
 			
 			<li>
@@ -279,7 +279,7 @@ text-decoration: none;
    				</ul>
    			</li>
 		</ul>
-	</nav>	
+	</nav>	 -->
 </div>	
 
 <!--Include Js-->
@@ -301,6 +301,7 @@ text-decoration: none;
 	 $(function(){
 		 
 		    $(".load_index").click(function(){
+		    	alert("hi");
 		 		location.href="../doIndexUI.do";
 		 	})
 		    $(".load_city").click(function(){
@@ -326,10 +327,15 @@ text-decoration: none;
 			$(".logout").click(function(){
 				location.href="../doLogout.do";
 			})
-		 
+		 	$(".active").click(function(){
+		 		var username= document.getElementById("")
+		 	})
 		 
 		  $("#pageId").load("../doPageUI.do",function(){
-			
+			 /*  var tBody= $("#cityObject");
+				
+				var li = $('<li><a href="doCityDetail.do?id=1015101"><img style="width:100%" src="http://192.168.2.81:8002/static/lunbo/15470215196318142.jpg" class="vcenter" alt="picture"/></a></li>')
+				tBody.append(li); */
 			findTripObjects();//ajax
 			//在此位置实现异步加载的目的是保证两个异步的顺序,里面的后执行
 			});//ajax 去执行doGetObjects()方法的同时执行下面代码
@@ -352,7 +358,7 @@ text-decoration: none;
 			
 			//1.定义请求的url
 			//debugger
-			var logUrl="http://localhost:8080/CROWN-BS-SYS-V1/city/findPageObjects.do";
+			var logUrl="http://192.168.2.21:8080/CROWN-BS-SYS-V1/city/findPageObjects.do";
 			//2.定义请求的参数
 			//var params="pageCurrent=1";
 			var pageCurrent =$("#pageId").data("pageCurrent");
@@ -366,6 +372,8 @@ text-decoration: none;
 			//var params="pageCurrent="+pageCurrent+"&username="+username;
 			/* if(city_name)params.city_name=city_name; */
 			//3.发送异步请求
+			
+			
 			$.ajax({//底层封装了XMLHttpRequest
 				url:logUrl,
 				data:params,
@@ -509,7 +517,6 @@ text-decoration: none;
 	
 </script>
 
-<!--<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
-
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -10,6 +10,8 @@ import com.bs.sys.entity.SysTravel;
 public interface SysTravelDao {
 	
 	
+	/*String findPictureByCityId(Integer id);*/
+	
 	SysTravel doFindTravelObjectById(Integer id);
 	
 	
